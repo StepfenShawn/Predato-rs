@@ -1,14 +1,25 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+mod rdd;
+mod split;
+
+use rdd::dataset::Dataset;
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use std::vec;
+
+    use crate::rdd::dataset::{self, Dataset};
 
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn test_rdd1() {
+        let data = vec![vec![1, 2, 3], vec![4, 5, 6]];
+        let dataset = Dataset::new(data);
+
+        let mapped = dataset.map(|x| x * 2);
+        // assert_eq!(mapped, Dataset::<i32>{partitions: vec![vec![2, 4, 6], vec![8, 10, 12]]});
+        println!("{:?}", mapped);
+
+        // let sum = dataset.reduce(|a, b| a + b);
+        // println!("{}", sum);
+        // assert_eq!(32, sum);
     }
 }
