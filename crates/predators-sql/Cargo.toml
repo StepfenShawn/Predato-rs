@@ -1,10 +1,9 @@
 [package]
-name = "predators-core"
+name = "predators-sql"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-downcast-rs = "1.2.1"
-arrow = { version = "5.0"}
+pg_query = "5.1"

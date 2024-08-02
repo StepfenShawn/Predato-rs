@@ -1,4 +1,5 @@
 [workspace]
 members = [
-    "crates/predators-core",
+    "crates/predators-core", 
+    "crates/predators-sql",
 ]
