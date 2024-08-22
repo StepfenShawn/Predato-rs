@@ -1,7 +1,7 @@
 use downcast_rs::{impl_downcast, DowncastSync};
 
 pub(crate) struct SplitStruct {
-    index: usize
+    index: usize,
 }
 
 pub trait Split: DowncastSync {
