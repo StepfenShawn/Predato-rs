@@ -1,15 +1,19 @@
-use arrow::datatypes::DataType;
+use super::dtypes::Dtype;
 
 #[derive(Clone)]
 pub struct Field<'a> {
     name: &'a str,
-    data_type: DataType,
+    data_type: Dtype,
     nullable: bool,
 }
 
 impl Field<'_> {
     fn to_arrow(&self) -> arrow::datatypes::Field {
-        return arrow::datatypes::Field::new(&self.name, self.data_type.clone(), self.nullable);
+        return arrow::datatypes::Field::new(
+            &self.name,
+            self.data_type.to_arrow_type(),
+            self.nullable,
+        );
     }
 }
 
