@@ -1,8 +1,10 @@
-mod datatypes;
+mod data_source;
+mod data_types;
 mod rdd;
 mod split;
 
-use datatypes::*;
+use data_source::*;
+use data_types::*;
 use rdd::dataset::Dataset;
 
 #[cfg(test)]

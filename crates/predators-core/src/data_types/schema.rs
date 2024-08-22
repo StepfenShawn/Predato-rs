@@ -1,7 +1,7 @@
 use arrow::datatypes::DataType;
 
 #[derive(Clone)]
-struct Field<'a> {
+pub struct Field<'a> {
     name: &'a str,
     data_type: DataType,
     nullable: bool,
@@ -13,7 +13,7 @@ impl Field<'_> {
     }
 }
 
-struct Schema<'a> {
+pub struct Schema<'a> {
     fields: Vec<Field<'a>>,
 }
 
