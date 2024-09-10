@@ -1,3 +1,4 @@
+mod arrow_storage;
 mod data_source;
 mod data_types;
 mod rdd;

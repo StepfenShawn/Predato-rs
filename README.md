@@ -1,5 +1,5 @@
 # Predato-rs[WIP]
-A blazing fast distributed computation engine in rust. 
+A tiny but blazing fast distributed computation engine in rust. 
 
 # TODO Features
 * distributed computation

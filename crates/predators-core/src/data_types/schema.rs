@@ -1,3 +1,5 @@
+use crate::arrow_storage::arrow::ToArrow;
+
 use super::dtypes::Dtype;
 
 #[derive(Clone)]

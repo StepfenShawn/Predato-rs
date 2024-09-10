@@ -1,4 +1,4 @@
-use arrow::datatypes::DataType;
+use crate::arrow_storage::arrow::ToArrow;
 
 #[derive(Debug, Clone, Default)]
 pub enum Dtype {
@@ -31,25 +31,4 @@ pub enum Dtype {
     /// A 32-bit date representing the elapsed time since UNIX epoch (1970-01-01)
     /// in days (32 bits).
     Date,
-}
-
-impl Dtype {
-    pub fn to_arrow_type(&self) -> DataType {
-        match self {
-            Dtype::Null => DataType::Null,
-            Dtype::Boolean => DataType::Boolean,
-            Dtype::String => DataType::Utf8,
-            Dtype::UInt8 => DataType::UInt8,
-            Dtype::UInt16 => DataType::UInt16,
-            Dtype::UInt32 => DataType::UInt32,
-            Dtype::UInt64 => DataType::UInt64,
-            Dtype::Int8 => DataType::Int8,
-            Dtype::Int16 => DataType::Int16,
-            Dtype::Int32 => DataType::Int32,
-            Dtype::Int64 => DataType::Int64,
-            Dtype::Float32 => DataType::Float32,
-            Dtype::Float64 => DataType::Float64,
-            Dtype::Date => DataType::Date32,
-        }
-    }
 }
