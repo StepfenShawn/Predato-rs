@@ -1,33 +1,17 @@
-use crate::arrow_storage::arrow::ToArrow;
-
 use super::dtypes::Dtype;
 
 #[derive(Clone)]
 pub struct Field<'a> {
-    name: &'a str,
-    data_type: Dtype,
-    nullable: bool,
-}
-
-impl Field<'_> {
-    fn to_arrow(&self) -> arrow::datatypes::Field {
-        return arrow::datatypes::Field::new(
-            &self.name,
-            self.data_type.to_arrow_type(),
-            self.nullable,
-        );
-    }
+    pub name: &'a str,
+    pub data_type: Dtype,
+    pub nullable: bool,
 }
 
 pub struct Schema<'a> {
-    fields: Vec<Field<'a>>,
+    pub fields: Vec<Field<'a>>,
 }
 
 impl Schema<'_> {
-    fn to_arrow(&self) -> arrow::datatypes::Schema {
-        return arrow::datatypes::Schema::new(self.fields.iter().map(|x| x.to_arrow()).collect());
-    }
-
     fn project(&self, indices: Vec<usize>) -> Schema {
         return Schema {
             fields: indices

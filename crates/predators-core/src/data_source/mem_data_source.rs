@@ -14,4 +14,14 @@ struct InMemDataSource<'a> {
     pj_schema: Schema<'a>,
     /// projection indices
     pj_indices: Vec<i64>,
+    /// vector builder
+    builder: dyn arrow::array::ArrayBuilder
 }
+
+// impl Default for InMemDataSource<'_> {
+//     fn default() -> Self {
+//         Self { 
+            
+//          }
+//     }
+// }

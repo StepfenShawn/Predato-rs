@@ -3,6 +3,7 @@ mod data_source;
 mod data_types;
 mod rdd;
 mod split;
+pub mod io;
 
 use data_source::*;
 use data_types::*;

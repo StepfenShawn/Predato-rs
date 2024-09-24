@@ -1,4 +1,4 @@
 [workspace]
-members = [
+members = [ "crates/predators",
     "crates/predators-core", "crates/predators-distributed", 
-    "crates/predators-sql", "crates/predators-streaming"]
+    "crates/predators-sql", "crates/predators-streaming", "crates/predators-utils"]
