@@ -33,18 +33,18 @@ lhs = lhs.filter(col("l1") > 0)
 
 // Join
 rhs = rhs.join(lhs, how: JoinType::Left)
-             .left_on(&[col("l1"), col("l2")])
-             .right_on(&[col("l1"), col("l2")]);
+         .left_on(&[col("l1"), col("l2")])
+         .right_on(&[col("l1"), col("l2")]);
 
 // Group By
 rhs = rhs.group_by(keys: &[col("l1"), col("l2")])
-             .fmap(|&chunk| {chunk})
+         .fmap(|&chunk| {chunk})
 
 pipe!{rhs, show . collect . select([col("l1"), col("l2"), col("l3")])}
 // Or
 rhs.select([col("l1"), col("l2"), col("l3")])
-    .collect()
-    .show();
+   .collect()
+   .show();
 ```
 
 

@@ -1,3 +1,5 @@
+use std::hash::Hash;
+
 #[derive(Debug, Clone, Default)]
 pub enum AnyValue<'a> {
     #[default]
@@ -29,4 +31,20 @@ pub enum AnyValue<'a> {
     /// A 32-bit date representing the elapsed time since UNIX epoch (1970-01-01)
     /// in days (32 bits).
     Date(i32),
+}
+
+impl PartialEq for AnyValue<'_> {
+    fn eq(&self, other: &Self) -> bool {
+        todo!()
+    }
+}
+
+impl Eq for AnyValue<'_> {
+    
+}
+
+impl Hash for AnyValue<'_> {
+    fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+        todo!()
+    }
 }
